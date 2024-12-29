@@ -9,7 +9,6 @@ import logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename='read-boekh.log', level=logging.INFO, format='%(asctime)s - %(levelname)s ; %(filename)s/%(funcName)s ; regelnr:%(lineno)d ; %(message)s')
 
-
 def read_maand(file_path_xls, maand, df, columns):
 
     try:
@@ -160,11 +159,11 @@ def process_transactions(columns, jaar, maand, bank):
         logger.info("Terminated")
         return False
     else:
-        logger.info("Opvoeren nieuwe datums succesvol")
+        logger.info("Opvoeren nieuwe datums  succesvol")
         pass
 
 #  7. XML bestand inlezen en DE TRANSACTIES OPSLAAN IN de database tabel TRANSACTIE
-#   Als het inlezen mislukt dan loggen en afbreken
+#   Als het inlezen mislukt dan loggen en afbreken.
     if not add_record_transaction.main(file_path_xml, bank):
         logger.info("Terminated")
         return False
