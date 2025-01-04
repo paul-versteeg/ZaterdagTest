@@ -20,6 +20,10 @@ def inlezen_datums(file_path_xml, records):
         # Doorloop elk 'item' element in het XML-bestand en plaats het datum veld ze in het array records
         for item in root.findall('item'):
             datum_xml = item.find('datum').text
+            if not controleer_geldige_datum.main(imp_datum):
+                logger.error("Datum " + datum_xml + " is ongeldig")
+                return False
+                exit()
             records.append((datum_xml))
         logger.info("Inlezen datums uit " + file_path_xml + " succesvol")
         return records

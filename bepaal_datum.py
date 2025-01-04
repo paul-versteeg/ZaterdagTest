@@ -4,7 +4,6 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(filename='read-boekh.log', level=logging.INFO, format='%(asctime)s - %(levelname)s ; %(filename)s/%(funcName)s ; regelnr:%(lineno)d ; %(message)s')
 
 
-
 def check_datum(imp_date, date_format='%Y-%m-%d %H:%M:%S'):
 
     try:

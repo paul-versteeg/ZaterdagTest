@@ -110,10 +110,7 @@ def process_transactions(columns, jaar, maand, bank):
 #  1 --- Import JAAR verwerken tot bestandsnaam te lezen XLS
 #  bepalen welk jaar en welke maand ingelezen moeten worden en hoe
 #  het in te lezen xls bestand heet en het te schrijven xml bestand gaat heten
-    file_path_xls = 'xls/boekhouding' + jaar + '.xlsx'
-
-
-# 2. controleren of het XLS met het tabblad bestaat
+    file_path_xls = 'xls/boekhouding' + jaar + '.xlsx' # controleren of het XLS met het tabblad bestaat
 #  Als XLS niet is gevonden dan loggen en afbreken.
 #  Anders verder gaan met verwerking
     try:
