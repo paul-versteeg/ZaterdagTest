@@ -1,6 +1,6 @@
 from datetime import datetime
 
-def main(datum_string, datum_formaat="%d-%m-%Y"):
+def main(datum_string, datum_formaat="%Y-%m-%d %H:%M:%S"):
     try:
         # Probeer de datum te parsen volgens het opgegeven formaat
         datetime.strptime(datum_string, datum_formaat)

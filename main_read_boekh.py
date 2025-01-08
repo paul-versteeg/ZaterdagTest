@@ -187,11 +187,11 @@ def main(jaar, maand):
     if not process_transactions(columns_ing, jaar, maand, bank="ING"):
         logger.error("Verwerking transacties ING mislukt")
         return False
-    elif not process_transactions(columns_asn, jaar, maand, bank="ASN"):
+
+    if not process_transactions(columns_asn, jaar, maand, bank="ASN"):
         logger.error("Verwerking transacties ASN mislukt")
         return False
-    else:
-        pass
+
 
     return True
 
@@ -209,7 +209,7 @@ if __name__ == '__main__':
         exit(1)
 
     if not main(jaar, maand):
-        logger.info("closed met fouten")
+        logger.error("closed met fouten")
         exit(1)                 #  de logica in MAIN aanroepen
 
     logger.info("closed")       #  het script afsluiten

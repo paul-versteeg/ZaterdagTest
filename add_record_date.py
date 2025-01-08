@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import bepaal_datum
 import database_names
 import retrieve_queries
+import controleer_geldige_datum
 import logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename='read-boekh.log', level=logging.INFO, format='%(asctime)s - %(levelname)s ; %(filename)s/%(funcName)s ; regelnr:%(lineno)d ; %(message)s')
@@ -20,7 +21,7 @@ def inlezen_datums(file_path_xml, records):
         # Doorloop elk 'item' element in het XML-bestand en plaats het datum veld ze in het array records
         for item in root.findall('item'):
             datum_xml = item.find('datum').text
-            if not controleer_geldige_datum.main(imp_datum):
+            if not controleer_geldige_datum.main(datum_xml):
                 logger.error("Datum " + datum_xml + " is ongeldig")
                 return False
                 exit()

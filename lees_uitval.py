@@ -109,7 +109,7 @@ def main(directory_uitval, bank):
             #  er zijn geen uitval bestanden. het is niet nodig ze in te lezen en te verwijderen.
             #  de uitval-routine kan verlaten worden
             logger.info(f"Er zijn voor {bank} geen uitvalbestanden gevonden in {directory_uitval}")
-            exit()
+            return True
     except Exception as e:
         #  het inlezen zelf is niet gelukt. Dit is een error
         logger.error("Er is een fout opgetreden bij het lezen van de uitvalbestanden: {e}")

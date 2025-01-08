@@ -16,8 +16,8 @@ def main():
 
     return database_data
 
-    if __name__ == '__main__':
-        main()
-        # end of file
+if __name__ == '__main__':
+    main()
+    # end of file
 
 
